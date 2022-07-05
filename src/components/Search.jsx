@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Accordion from "./Accordion";
+import axios from "../api/wikipedia";
 
-function Search({ items }) {
-  const [term, setTerm] = useState('');
+function Search() {
+  const [term, setTerm] = useState("");
   const [debounce, setDebounce] = useState(null);
+  const [results, setResults] = useState([]);
 
   useEffect(() => {
     const debounceTimeout = setInterval(() => {
       setDebounce(term);
-    }, 1000);
+    }, 600);
 
     return () => {
       clearInterval(debounceTimeout);
@@ -16,7 +18,17 @@ function Search({ items }) {
   }, [term]);
 
   useEffect(() => {
-    console.log(debounce);
+    if (debounce == "" || debounce == null || debounce == undefined) return;
+    const getData = async () => {
+      const res = await axios.get("", {
+        params: {
+          srsearch: debounce,
+        },
+      });
+      setResults(res.data.query.search);
+    };
+
+    getData();
   }, [debounce]);
 
   return (
@@ -31,7 +43,7 @@ function Search({ items }) {
         />
       </div>
 
-      <Accordion items={items} />
+      <Accordion items={results} />
     </div>
   );
 }

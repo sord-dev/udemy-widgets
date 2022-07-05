@@ -9,7 +9,7 @@ function Accordion({ items }) {
 
   const accItems = items.map((item, index) => {
     return (
-      <React.Fragment key={item.id}>
+      <React.Fragment key={item.pageid}>
         <div
           className={activeIndex == index ? "title active" : "title"}
           onClick={() => handleClickEvent(index)}
@@ -18,17 +18,13 @@ function Accordion({ items }) {
           {item.title}
         </div>
         <div className={activeIndex == index ? "content active" : "content"}>
-          <p>{item.content}</p>
+          <p dangerouslySetInnerHTML={{ __html: item.snippet }}></p>
         </div>
       </React.Fragment>
     );
   });
 
-  return (
-    <div className="ui styled accordion" >
-      {accItems}
-    </div>
-  );
+  return <div className="ui styled accordion">{accItems}</div>;
 }
 
 export default Accordion;
