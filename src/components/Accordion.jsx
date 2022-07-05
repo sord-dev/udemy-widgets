@@ -19,6 +19,13 @@ function Accordion({ items }) {
         </div>
         <div className={activeIndex == index ? "content active" : "content"}>
           <p dangerouslySetInnerHTML={{ __html: item.snippet }}></p>
+          <a
+            className="ui button"
+            target={"_blank"}
+            href={`https://en.wikipedia.org/?curid=${item.pageid}`}
+          >
+            To Page
+          </a>
         </div>
       </React.Fragment>
     );
