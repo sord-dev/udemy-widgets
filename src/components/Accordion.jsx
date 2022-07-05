@@ -1,31 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function Accordion({ items }) {
-  const [count, setCount] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const AccordionItem = ({ title, content }) => {
-    return (
-      <>
-        <div className="title" onClick={handleClickEvent}>
-          <i className="dropdown icon"></i>
-          {title}
-        </div>
-        <div className="content">
-          <p>{content}</p>
-        </div>
-      </>
-    );
+  const handleClickEvent = (index) => {
+    setActiveIndex(index);
   };
 
-  const handleClickEvent = (event) => {
-    console.log(event)
-  }
+  const accItems = items.map((item, index) => {
+    return (
+      <React.Fragment key={item.id}>
+        <div
+          className={activeIndex == index ? "title active" : "title"}
+          onClick={() => handleClickEvent(index)}
+        >
+          <i className="dropdown icon"></i>
+          {item.title}
+        </div>
+        <div className={activeIndex == index ? "content active" : "content"}>
+          <p>{item.content}</p>
+        </div>
+      </React.Fragment>
+    );
+  });
 
-  const accItems = items.map((item) => (
-    <AccordionItem key={item.id} title={item.title} content={item.content} />
-  ));
-
-  return <div className="ui styled accordion">{accItems}</div>;
+  return (
+    <div className="ui styled accordion" style={{ margin: "25px auto" }}>
+      {accItems}
+    </div>
+  );
 }
 
 export default Accordion;
