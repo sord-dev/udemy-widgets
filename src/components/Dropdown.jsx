@@ -39,14 +39,18 @@ function Dropdown() {
   };
 
   return (
-    <div className="ui selection dropdown" onClick={toggleMenu}>
-      <input name="color" />
-      <i className="dropdown icon"></i>
-      <div className="text">{select.label}</div>
-      <div className={menu ? "menu visible transition" : "menu"}>
-        {renderedOptions}
+    <>
+    <label htmlFor="colour dropdown" className="ui label">Choose a Color</label>
+    <br />
+      <div className="ui selection dropdown" onClick={toggleMenu}>
+        <input name="color" />
+        <i className="dropdown icon"></i>
+        <div className="text">{select.label}</div>
+        <div className={menu ? "menu visible transition" : "menu"}>
+          {renderedOptions}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
