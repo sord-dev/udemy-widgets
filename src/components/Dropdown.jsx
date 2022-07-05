@@ -20,6 +20,8 @@ function Dropdown() {
   const [select, setSelect] = useState(options[0]);
 
   const renderedOptions = options.map((option) => {
+    if (option.value === select.value) return;
+
     return (
       <div
         className="item"
