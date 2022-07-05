@@ -5,7 +5,7 @@ function App() {
   
   return (
     <div className="ui fluid container" style={{ display: "flex", flexDirection: "column", alignItems: 'center' }}>
-      <Search   />
+      <Search />
     </div>
   );
 }
