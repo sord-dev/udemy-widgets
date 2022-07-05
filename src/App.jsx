@@ -1,4 +1,4 @@
-import Accordion from "./components/Accordion";
+import Search from "./components/Search";
 
 const ITEMS = [
   { id: 1, title: "This is the title", content: "I'm not very imaginative" },
@@ -23,8 +23,8 @@ function App() {
   
 
   return (
-    <div className="ui fluid container">
-      <Accordion items={ITEMS} />
+    <div className="ui fluid container" style={{ display: "flex", flexDirection: "column", alignItems: 'center' }}>
+      <Search items={ITEMS}  />
     </div>
   );
 }

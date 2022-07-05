@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 function Accordion({ items }) {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const handleClickEvent = (index) => {
     setActiveIndex(index);
@@ -25,7 +25,7 @@ function Accordion({ items }) {
   });
 
   return (
-    <div className="ui styled accordion" style={{ margin: "25px auto" }}>
+    <div className="ui styled accordion" >
       {accItems}
     </div>
   );
