@@ -2,6 +2,7 @@ import Search from "./components/Search";
 import Translate from "./components/Translate";
 import Color from "./components/Color";
 import "./App.css";
+import Route from "./components/Route";
 
 function App() {
   return (
@@ -9,7 +10,17 @@ function App() {
       className="ui fluid container"
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
-      <Translate />
+      <Route path="/">
+        <Search />
+      </Route>
+
+      <Route path="/translate">
+        <Translate />
+      </Route>
+
+      <Route path="/color">
+        <Color />
+      </Route>
     </div>
   );
 }

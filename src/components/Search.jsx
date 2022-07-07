@@ -37,7 +37,7 @@ function Search() {
         <i className="search icon"></i>
         <input
           type="text"
-          placeholder="Search..."
+          placeholder="Search Wikipedia..."
           onChange={(e) => setTerm(e.target.value)}
           value={term}
         />
