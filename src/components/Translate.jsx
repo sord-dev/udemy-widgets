@@ -15,6 +15,26 @@ const options = [
     label: "Finnish",
     value: "fi",
   },
+  {
+    label: "Afrikaans",
+    value: "af",
+  },
+  {
+    label: "Albanian",
+    value: "sq",
+  },
+  {
+    label: "Amharic",
+    value: "am",
+  },
+  {
+    label: "Arabic",
+    value: "ar",
+  },
+  {
+    label: "Armenian",
+    value: "hy",
+  },
 ];
 
 function Translate() {
