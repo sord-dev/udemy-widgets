@@ -2,31 +2,37 @@ import React, { useEffect, useState } from "react";
 import axios from "../api/google";
 
 function Convert({ phrase, language }) {
-  const [translation, setTranslation] = useState(null)
+  const [translation, setTranslation] = useState(null);
+  const [debouncePhrase, setDebouncePhrase] = useState(null);
 
   useEffect(() => {
+    const intervalID = setInterval(() => setDebouncePhrase(phrase), 500);
 
+    return () => {
+      clearInterval(intervalID);
+    };
+  }, [phrase, language]);
+
+  useEffect(() => {
     const getTranslation = async () => {
       const res = await axios.post("", {
-        q: phrase,
+        q: debouncePhrase,
         target: language.value,
       });
 
-      setTranslation(res.data.data.translations[0])
+      setTranslation(res.data.data.translations[0]);
     };
 
-
-    getTranslation()
-  }, [phrase, language]);
+    getTranslation();
+  }, [debouncePhrase, language]);
 
   return (
     <>
       <h1>
-        {translation == null
+        {debouncePhrase == null || debouncePhrase == ""
           ? "enter some text in the field to get a translation"
           : translation.translatedText}
       </h1>
-      <h3>{`This text will be displayed in ${language.label}.`}</h3>
     </>
   );
 }
