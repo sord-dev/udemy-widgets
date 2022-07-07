@@ -20,7 +20,7 @@ function Color() {
   const [select, setSelect] = useState(options[0]);
 
   return (
-    <>
+    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
       <label
         htmlFor="colour dropdown"
         className="ui label"
@@ -34,7 +34,7 @@ function Color() {
       <div>
         <p className={select.value}>{`This text is ${select.value}!`}</p>
       </div>
-    </>
+    </div>
   );
 }
 
