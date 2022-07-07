@@ -15,7 +15,7 @@ function Convert({ phrase, language }) {
 
   useEffect(() => {
     const getTranslation = async () => {
-      if(phrase === '' || phrase === null || phrase === undefined) return;
+      if(phrase === '' || phrase === null || phrase === undefined) return
       const res = await axios.post("", {
         q: debouncePhrase,
         target: language.value,
@@ -29,7 +29,7 @@ function Convert({ phrase, language }) {
 
   return (
     <h1>
-      {debouncePhrase == null || debouncePhrase == ""
+      {translation === null || translation === ""
         ? "enter some text in the field to get a translation"
         : translation.translatedText}
     </h1>
