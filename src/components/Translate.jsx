@@ -42,12 +42,13 @@ function Translate() {
   const [phrase, setPhrase] = useState("");
 
   return (
-    <div className="ui container center aligned" style={{ marginTop: "10px" }}>
+    <div style={{ marginTop: "10px" }}>
       <div
         style={{
           display: "flex",
-          justifyContent: "center",
+          flexDirection: "column",
           alignItems: "center",
+          gap: "10px",
         }}
       >
         <div className="ui input">
@@ -69,9 +70,9 @@ function Translate() {
           <label htmlFor="">Select Language</label>
           <Dropdown options={options} select={select} setSelect={setSelect} />
         </div>
-      </div>
 
-      <Convert phrase={phrase} language={select} />
+        <Convert phrase={phrase} language={select} />
+      </div>
     </div>
   );
 }

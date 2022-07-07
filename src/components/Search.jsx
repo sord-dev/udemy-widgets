@@ -32,7 +32,7 @@ function Search() {
   }, [debounce]);
 
   return (
-    <div style={{ marginTop: "15px" }}>
+    <div className='ui container fluid'>
       <div className="ui left icon input" style={{ marginBottom: "15px" }}>
         <i className="search icon"></i>
         <input

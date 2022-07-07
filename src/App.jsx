@@ -11,7 +11,6 @@ function App() {
     <Navbar />
     <div
       className="ui fluid container"
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
       <Route path="/">
         <Search />

@@ -27,13 +27,11 @@ function Convert({ phrase, language }) {
   }, [debouncePhrase, language]);
 
   return (
-    <>
       <h1>
         {debouncePhrase == null || debouncePhrase == ""
           ? "enter some text in the field to get a translation"
           : translation.translatedText}
       </h1>
-    </>
   );
 }
 
