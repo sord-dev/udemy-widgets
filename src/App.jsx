@@ -3,9 +3,12 @@ import Translate from "./components/Translate";
 import Color from "./components/Color";
 import "./App.css";
 import Route from "./components/Route";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
+    <>
+    <Navbar />
     <div
       className="ui fluid container"
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
@@ -22,6 +25,7 @@ function App() {
         <Color />
       </Route>
     </div>
+    </>
   );
 }
 
