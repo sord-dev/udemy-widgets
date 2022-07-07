@@ -9,7 +9,7 @@ const options = [
   },
   {
     label: "Japanese",
-    value: "jp",
+    value: "ja",
   },
   {
     label: "Finnish",
