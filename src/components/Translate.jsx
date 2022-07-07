@@ -1,32 +1,57 @@
 import React, { useState } from "react";
+import Convert from "./Convert";
 import Dropdown from "./Dropdown";
 
 const options = [
   {
-    label: 'Japanese', value: 'jp'
+    label: "English",
+    value: "en",
   },
   {
-    label: 'Finnish', value: 'fi'
+    label: "Japanese",
+    value: "jp",
   },
   {
-    label: 'English', value: 'en'
+    label: "Finnish",
+    value: "fi",
   },
-] 
+];
 
 function Translate() {
-  const [select, setSelect] = useState(options[2]);
-  const [phrase, setPhrase] = useState('')
-  
+  const [select, setSelect] = useState(options[0]);
+  const [phrase, setPhrase] = useState("");
+
   return (
-    <div className="ui container center aligned" style={{ margin: "10px" }}>
-      <div className="ui input">
-        <input type="text" placeholder="Enter text..." value={phrase} onChange={(e) => setPhrase(e.target.value)}/>
+    <div className="ui container center aligned" style={{ marginTop: "10px" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <div className="ui input">
+          <input
+            type="text"
+            placeholder="Enter text..."
+            value={phrase}
+            onChange={(e) => setPhrase(e.target.value)}
+          />
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <label htmlFor="">Select Language</label>
+          <Dropdown options={options} select={select} setSelect={setSelect} />
+        </div>
       </div>
 
-      <Dropdown options={options} select={select} setSelect={setSelect} />
-
-      <h1>{phrase}</h1>
-      <h3>{`This text will be displayed in ${select.label}.`}</h3>
+      <Convert phrase={phrase} language={select} />
     </div>
   );
 }

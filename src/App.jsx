@@ -1,5 +1,4 @@
 import Search from "./components/Search";
-import Dropdown from "./components/Dropdown";
 import Translate from "./components/Translate";
 import Color from "./components/Color";
 import "./App.css";
