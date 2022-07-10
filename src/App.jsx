@@ -8,22 +8,20 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <>
-    <Navbar />
-    <div
-      className="ui fluid container"
-    >
-      <Route path="/">
-        <Search />
-      </Route>
+      <Navbar />
+      <div className="ui fluid container">
+        <Route path="/">
+          <Search />
+        </Route>
 
-      <Route path="/translate">
-        <Translate />
-      </Route>
+        <Route path="/translate">
+          <Translate />
+        </Route>
 
-      <Route path="/color">
-        <Color />
-      </Route>
-    </div>
+        <Route path="/color">
+          <Color />
+        </Route>
+      </div>
     </>
   );
 }
