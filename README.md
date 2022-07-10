@@ -18,13 +18,13 @@ This project taught me a lot about state and how React works. Having to learn ho
 1.  To get the sample code from GitHub, use the  `git clone`  command to get a local copy of the remote repository. To clone the sample code, run the following command:
     
     ```bash
-    $ git clone https://github.com/sord-dev/portfolio.git
+    $ git clone https://github.com/sord-dev/udemy-widgets.git
     ```
 
     
 2.  Install dependencies
     ``` bash 
-    $ cd portfolio
+    $ cd udemy-widgets
     $ npm i
 	```
 
