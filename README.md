@@ -32,3 +32,7 @@ This project taught me a lot about state and how React works. Having to learn ho
     ``` bash 
     $ npm run dev
 	```
+
+## Note
+
+This project **only works on localhost!!** this is because the google translate api is paid, and the key I have for it works only on the domain 'localhost:XXXX' let XXXX be whatever port you like. 
