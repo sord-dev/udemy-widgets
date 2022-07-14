@@ -1,6 +1,6 @@
 # Widgets repo
 
-*A project from a [Udemy course](https://www.udemy.com/course/react-redux/learn/lecture/12531408#content) I'm working on to learn react and redux*
+*A project from a [Udemy course](https://www.udemy.com/course/react-redux/) I'm working on to learn react and redux*
 
 ## Widgets
 
