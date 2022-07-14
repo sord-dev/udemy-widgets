@@ -14,7 +14,7 @@ This project **only works on localhost!!** this is because the google translate 
 
 ## Lessons Learned
 
-This project taught me a lot about state and how React works. Having to learn how to implement routing (done by manually creating an event and allowing your components to listen for it, allowing for a rerender along with changing the url of the browser simultaneously), learning how axios calls can be customised to have baseURLs and params and a lot more has given me a better better understanding of how to impliment react solutions.
+This project taught me a lot about state and how React works. Having to learn how to implement routing (done by manually creating an event and allowing your components to listen for it, allowing for a rerender along with changing the url of the browser simultaneously), learning how axios calls can be customised to have baseURLs and params and a lot more has given me a better understanding of how to impliment react solutions.
 
 
 ## Cloning this repo
